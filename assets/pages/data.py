@@ -16,7 +16,9 @@ def write():
     """)
     na_value=['',' ','nan','Nan','NaN','na', '<Na>']
     train = pd.read_csv('data/train.csv', na_values=na_value)
+    print(train.shape)
     store = pd.read_csv('data/store.csv', na_values=na_value)
+    print(store.shape)
     full_train = pd.merge(left = train, right = store, how = 'inner', left_on = 'Store', right_on = 'Store')
     full_train = full_train.set_index('Store')
     st.write('---')

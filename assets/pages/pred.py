@@ -22,7 +22,7 @@ def write():
     test_df = file_handler.read_csv('data/test.csv')
     st.markdown('### Sample test data input')
     st.write(test_df.head(10))
-    model = pickle.load(open('models/LSTM_sales_on 2022-05-27-11-51-33.pkl', "rb"))
+    model = pickle.load(open('models/LSTM_sales_on 2022-05-27-11-51-33_2.pkl', "rb"))
     y_preds = model.predict(df)
     prediction_df = df.copy()
     prediction_df["Pred_sales"] = y_preds
